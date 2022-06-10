@@ -135,7 +135,7 @@ public class TimelineActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void onLogoutButton(View view) {
+    public void onLogoutButton(MenuItem item) {
         // Forget who's logged in
         TwitterApp.getRestClient(this).clearAccessToken();
 
@@ -143,6 +143,13 @@ public class TimelineActivity extends AppCompatActivity {
         Intent i = new Intent(this, LoginActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+    }
+
+    // Method to allow the compose button to navigate to the compose activity
+    public void onComposeButton(View view) {
+        // Navigate backwards to compose screen
+        Intent i = new Intent(this, ComposeActivity.class);
         startActivity(i);
     }
 

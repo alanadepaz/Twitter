@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".TimelineActivity">
@@ -19,17 +19,19 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp" />
 
-        <Button
-            android:id="@+id/logoutButton"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/compose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="Log Out"
-            android:onClick="onLogoutButton"
-            android:visibility="visible" />
+            android:layout_gravity="bottom|right"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/twitter_blue"
+            android:onClick="onComposeButton"
+            app:srcCompat="@drawable/vector_compose_fab" />
     </RelativeLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
