@@ -153,16 +153,6 @@ public class TimelineActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    /*
-    // Method to allow the reply button to navigate to the reply activity
-    public void onReplyButton(View view) {
-        Intent i = new Intent(this, ReplyActivity.class);
-        i.putExtra("key", tweets.indexOf(0));
-        startActivity(i);
-    }
-
-     */
-
     public void fetchTimelineAsync(int page) {
         // Send the network request to fetch the updated data
         client.getHomeTimeline(new JsonHttpResponseHandler() {
