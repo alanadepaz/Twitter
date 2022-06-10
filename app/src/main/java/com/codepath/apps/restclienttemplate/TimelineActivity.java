@@ -150,7 +150,7 @@ public class TimelineActivity extends AppCompatActivity {
     public void onComposeButton(View view) {
         // Navigate backwards to compose screen
         Intent i = new Intent(this, ComposeActivity.class);
-        startActivity(i);
+        startActivityForResult(i, REQUEST_CODE);
     }
 
     public void fetchTimelineAsync(int page) {
