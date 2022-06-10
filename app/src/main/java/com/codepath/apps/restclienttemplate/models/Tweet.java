@@ -25,9 +25,6 @@ public class Tweet {
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
 
-        if(jsonObject.has("full_text")) {
-            tweet.body = jsonObject.getString("full_text");
-        }
         if (!jsonObject.getJSONObject("entities").has("media")) {
             tweet.image = "none";
         }
