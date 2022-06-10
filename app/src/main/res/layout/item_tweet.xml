@@ -37,11 +37,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvBody"
+        android:layout_gravity="center"
         android:layout_marginStart="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="5dp"
-        android:layout_gravity="center"
         android:scaleType="centerInside"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -55,5 +55,15 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tvScreenName"
         tools:text="Apr 4, 2020" />
+
+    <Button
+        android:id="@+id/replyButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/ivTweet"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_twitter_reply"
+        android:backgroundTint="@color/twitter_blue" />
 
 </RelativeLayout>

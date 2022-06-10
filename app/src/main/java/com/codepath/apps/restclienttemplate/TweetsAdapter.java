@@ -1,11 +1,14 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,6 +71,8 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvScreenName;
         ImageView ivTweet;
         TextView tvDateTime;
+        EditText etReply;
+        Button replyButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -76,6 +81,8 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             ivTweet = itemView.findViewById(R.id.ivTweet);
             tvDateTime = itemView.findViewById(R.id.tvDateTime);
+            etReply = itemView.findViewById(R.id.etReply);
+            replyButton = itemView.findViewById(R.id.replyButton);
         }
 
         public void bind(Tweet tweet) {
@@ -91,6 +98,15 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                 ivTweet.setVisibility(View.GONE);
             }
             tvDateTime.setText(getRelativeTimeAgo(tweet.createdAt));
+
+            replyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(view.getContext(), ReplyActivity.class);
+                    i.putExtra("key", tweet.user.screenName.toString());
+                    context.startActivity(i);
+                }
+            });
         }
     }
 
