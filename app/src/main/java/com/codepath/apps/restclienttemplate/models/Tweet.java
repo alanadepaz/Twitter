@@ -42,4 +42,11 @@ public class Tweet {
         }
         return tweets;
     }
+
+    // For automatically @'ing the user you're replying to
+    public User getUser() {
+        return this.user;
+    }
+
+
 }
